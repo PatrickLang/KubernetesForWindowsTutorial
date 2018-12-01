@@ -10,6 +10,7 @@ mkdir c:\repos
 cd c:\repos
 
 git clone https://github.com/PatrickLang/mssql-docker
+git clone https://github.com/PatrickLang/Visitors
 
 cd mssql-docker\windows\mssql-server-windows-express
 git checkout windowsserver2019
