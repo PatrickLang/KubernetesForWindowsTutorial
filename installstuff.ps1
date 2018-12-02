@@ -1,4 +1,13 @@
 # This isn't signed, must be run with powershell.exe -ExecutionPolicy bypass ...
+
+if ((get-command docker.exe -ErrorAction Ignore) -ne $null) {
+    Write-Host "Docker already installed, skipping"
+} else {
+    Install-Module DockerMsftProvider -Force
+    Install-Package Docker -ProviderName DockerMsftProvider -Force
+}
+
+
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 choco install -y git kubernetes-cli azure-cli vscode
 # For more info on VS install components see https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community?view=vs-2017#aspnet-and-web-development
