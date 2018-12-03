@@ -1,10 +1,12 @@
 # This isn't signed, must be run with powershell.exe -ExecutionPolicy bypass ...
 
+# The "Windows Server 2019 with Containers" VM on Azure already has Docker installed, and a few images pre-pulled
 if ((get-command docker.exe -ErrorAction Ignore) -ne $null) {
     Write-Host "Docker already installed, skipping"
 } else {
     Install-Module DockerMsftProvider -Force
     Install-Package Docker -ProviderName DockerMsftProvider -Force
+    # TODO: handle reboot, then schedule image pull
 }
 
 
