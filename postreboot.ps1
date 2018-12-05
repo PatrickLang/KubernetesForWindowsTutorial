@@ -1,3 +1,4 @@
+Disable-ScheduledTask -TaskName "\PowerShell\Finish Installing Stuff (run once)"
 # Pull images
 
 # Install Ubuntu, run install-stuff-in-wsl.sh

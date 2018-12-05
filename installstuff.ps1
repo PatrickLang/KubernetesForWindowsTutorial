@@ -21,13 +21,18 @@ choco install -y visualstudio2017community --package-parameters "--locale en-US 
 # TODO: fix path so git works
 
 mkdir c:\repos
-cd c:\repos
+#cd c:\repos
 
-git clone https://github.com/PatrickLang/mssql-docker
-git clone https://github.com/PatrickLang/Visitors
+#git clone https://github.com/PatrickLang/mssql-docker
+#git clone https://github.com/PatrickLang/Visitors
 
-cd mssql-docker\windows\mssql-server-windows-express
-git checkout windowsserver2019
-docker build -t mssql-server-windows-express .
+#cd mssql-docker\windows\mssql-server-windows-express
+#git checkout windowsserver2019
+#docker build -t mssql-server-windows-express .
 
 # TODO: handle reboot, then schedule image pull
+curl.exe -L https://gist.githubusercontent.com/PatrickLang/ecb052d6f6768af98ad9573cfde7cafa/raw/f995d8249ce503f2992c9f78e7a599ad347ff7ca/postreboot.ps1 -o c:\postreboot.ps1
+$action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument '-command C:\postreboot.ps1'
+$trigger = New-ScheduledTaskTrigger -AtStartup
+Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "\PowerShell\Finish Installing Stuff (run once)" -Description "Finish pulling images and other things that need to be done once after installing features"
+    
