@@ -10,4 +10,7 @@ Expand-Archive Ubuntu.zip ~/Ubuntu
 Pop-Location
 Remove-Item -Recurse $tmpDir
 
-# Ubuntu\ubuntu1804.exe
+~\Ubuntu\ubuntu1804.exe install --root
+~\Ubuntu\ubuntu1804.exe run useradd -m user
+~\Ubuntu\ubuntu1804.exe run 'useradd -m user -p $(echo -n P@ssw0rd | openssl passwd -crypt -stdin)'
+~\Ubuntu\ubuntu1804.exe config --default-user user
