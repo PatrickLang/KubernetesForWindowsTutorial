@@ -14,7 +14,7 @@ if ((get-command docker.exe -ErrorAction Ignore) -ne $null) {
 
 Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Windows-Subsystem-Linux
 
-choco install -y git kubernetes-cli azure-cli vscode 
+choco install -y git kubernetes-cli azure-cli vscode kubernetes-helm draft
 # For more info on VS install components see https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community?view=vs-2017#aspnet-and-web-development
 choco install -y visualstudio2017community --package-parameters "--locale en-US --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.Net.Component.4.7.2.SDK --add Microsoft.Net.ComponentGroup.4.7.2.DeveloperTools --includeRecommended"
 
