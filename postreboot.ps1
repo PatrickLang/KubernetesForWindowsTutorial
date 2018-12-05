@@ -11,5 +11,5 @@ Pop-Location
 Remove-Item -Recurse $tmpDir
 
 ~\Ubuntu\ubuntu1804.exe install --root
-~\Ubuntu\ubuntu1804.exe run 'useradd -m user -G sudo -p $(echo -n P@ssw0rd | openssl passwd -crypt -stdin)'
+~\Ubuntu\ubuntu1804.exe run 'useradd -m user -G sudo -s /bin/bash -p $(echo -n P@ssw0rd | openssl passwd -crypt -stdin)'
 ~\Ubuntu\ubuntu1804.exe config --default-user user
