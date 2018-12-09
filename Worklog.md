@@ -17,6 +17,8 @@ Open questions
 
 ### VM sizing
 
+#### Medium 
+
 This is a 'medium' size VM - looks like a standard_a4_v2
 
 ```powershell
@@ -38,3 +40,9 @@ OsFreePhysicalMemory                                    : 5528228
 OsTotalVirtualMemorySize                                : 10354228
 OsFreeVirtualMemory                                     : 7548404
 ```
+
+Building a sample mvc app with Docker took 4 mins, 9 seconds
+
+#### Large
+
+Standard_D8s_v3 based on metadata query
