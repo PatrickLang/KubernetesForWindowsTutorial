@@ -1,5 +1,8 @@
 # This isn't signed, must be run with powershell.exe -ExecutionPolicy bypass ...
 
+# Disable Server Manager autostart
+Set-ItemProperty HKCU:\Software\Microsoft\ServerManager -Name DoNotOpenServerManagerAtLogon -Value 1
+
 # Set up Chocolatey
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
@@ -14,7 +17,7 @@ if ((get-command docker.exe -ErrorAction Ignore) -ne $null) {
 
 Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Windows-Subsystem-Linux
 
-choco install -y git kubernetes-cli azure-cli vscode kubernetes-helm draft
+choco install -y git kubernetes-cli azure-cli vscode kubernetes-helm draft firefox
 # For more info on VS install components see https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community?view=vs-2017#aspnet-and-web-development
 choco install -y visualstudio2017community --package-parameters "--locale en-US --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.Net.Component.4.7.2.SDK --add Microsoft.Net.ComponentGroup.4.7.2.DeveloperTools --includeRecommended"
 
