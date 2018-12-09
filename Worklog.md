@@ -14,18 +14,24 @@ Open questions
 - [ ] any way to automate setup instead of using a login / save template workflow
 
 
-Work needed
+Work needed in LabVm scripts
 
 - [ ] Create a doc or shortcut to get a kubeconfig
 - [ ] Add links to walkthrough steps on GitHub
 - [ ] Pull sources for fabrikamfiber, checkout correct branch
 
+Manual steps before day of event
+- Manually update template VM
+  - `docker login`
+  - Copy in kubeconfig for the right cluster
 
 Steps for the day of the event
 
+- Keep registration restricted
 - Make login info public so people can copy & paste
 - Delete all VMs that were assigned already. They will be replaced with clean ones
 - Start all VMs
+- In session, set registration to unrestricted
 
 
 ### VM sizing
