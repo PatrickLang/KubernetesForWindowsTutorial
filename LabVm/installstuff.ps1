@@ -32,8 +32,8 @@ Remove-Item -Recurse $tmpDir
 
 
 # Pin useful things to taskbar
-curl.exe -o ~/modified-taskbar.xml -L https://raw.githubusercontent.com/PatrickLang/KubernetesForWindowsTutorial/master/LabVm/modified-taskbar.xml
-Import-StartLayout -LayoutPath .\modified-start.xml -MountPath c:\
+curl.exe -o modified-taskbar.xml -L https://raw.githubusercontent.com/PatrickLang/KubernetesForWindowsTutorial/master/LabVm/modified-taskbar.xml
+Import-StartLayout -LayoutPath .\modified-taskbar.xml -MountPath c:\
 get-process explorer | stop-process ; explorer.exe
 
 # TODO: fix path so git works
