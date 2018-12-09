@@ -31,8 +31,8 @@ mkdir c:\repos
 #docker build -t mssql-server-windows-express .
 
 # TODO: handle reboot, then schedule image pull
-curl.exe -L https://gist.githubusercontent.com/PatrickLang/ecb052d6f6768af98ad9573cfde7cafa/raw/f995d8249ce503f2992c9f78e7a599ad347ff7ca/postreboot.ps1 -o c:\postreboot.ps1
+curl.exe -L https://raw.githubusercontent.com/PatrickLang/KubernetesForWindowsTutorial/master/LabVm/postreboot.ps1 -o c:\postreboot.ps1
 $action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument '-command C:\postreboot.ps1'
 $trigger = New-ScheduledTaskTrigger -AtStartup
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "\PowerShell\Finish Installing Stuff (run once)" -Description "Finish pulling images and other things that need to be done once after installing features"
-    
+schtasks /create /TN RebootToContinue /RU SYSTEM /TR "shutdown.exe /r /t 0 /d 2:17" /SC ONCE /ST $(([System.DateTime]::Now + [timespan]::FromMinutes(1)).ToString("HH:mm")) /V1 /Z
