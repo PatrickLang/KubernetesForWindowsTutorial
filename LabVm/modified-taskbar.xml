@@ -1,0 +1,16 @@
+<LayoutModificationTemplate Version="1" 
+                            xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" 
+                            xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" 
+                            xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification"
+                            xmlns:taskbar="http://schemas.microsoft.com/Start/2014/TaskbarLayout">
+  <CustomTaskbarLayoutCollection PinListPlacement="Replace">
+    <defaultlayout:TaskbarLayout>
+      <taskbar:TaskbarPinList>
+        <taskbar:DesktopApp DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk"/>
+        <taskbar:DesktopApp DesktopApplicationLinkPath="%USERPROFILE%\ubuntu\ubuntu1804.exe"/>
+        <taskbar:DesktopApp DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Firefox.lnk"/>
+        <taskbar:DesktopApp DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Visual Studio Code\Visual Studio Code.lnk"/>
+      </taskbar:TaskbarPinList>
+    </defaultlayout:TaskbarLayout>
+  </CustomTaskbarLayoutCollection>
+</LayoutModificationTemplate>

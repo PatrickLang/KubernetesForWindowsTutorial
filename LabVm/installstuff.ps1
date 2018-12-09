@@ -17,9 +17,24 @@ if ((get-command docker.exe -ErrorAction Ignore) -ne $null) {
 
 Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Windows-Subsystem-Linux
 
-choco install -y git kubernetes-cli azure-cli vscode kubernetes-helm draft firefox
+choco install -y git kubernetes-cli azure-cli vscode kubernetes-helm draft firefox putty
 # For more info on VS install components see https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community?view=vs-2017#aspnet-and-web-development
 choco install -y visualstudio2017community --package-parameters "--locale en-US --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.Net.Component.4.7.2.SDK --add Microsoft.Net.ComponentGroup.4.7.2.DeveloperTools --includeRecommended"
+
+# Download Ubuntu
+$tmpDir = New-Item -ItemType Directory -Path (Join-Path ([System.IO.Path]::GetTempPath()) ([System.IO.Path]::GetRandomFileName()))
+Push-Location $tmpDir
+curl.exe -L -o ubuntu-1804.appx https://aka.ms/wsl-ubuntu-1804
+Rename-Item ubuntu-1804.appx Ubuntu.zip
+Expand-Archive Ubuntu.zip ~/Ubuntu
+Pop-Location
+Remove-Item -Recurse $tmpDir
+
+
+# Pin useful things to taskbar
+curl.exe -o ~/modified-taskbar.xml -L https://raw.githubusercontent.com/PatrickLang/KubernetesForWindowsTutorial/master/LabVm/modified-taskbar.xml
+Import-StartLayout -LayoutPath .\modified-start.xml -MountPath c:\
+get-process explorer | stop-process ; explorer.exe
 
 # TODO: fix path so git works
 
