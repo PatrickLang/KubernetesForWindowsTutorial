@@ -14,6 +14,19 @@ Open questions
 - [ ] any way to automate setup instead of using a login / save template workflow
 
 
+Work needed
+
+- [ ] Create a doc or shortcut to get a kubeconfig
+- [ ] Add links to walkthrough steps on GitHub
+- [ ] Pull sources for fabrikamfiber, checkout correct branch
+
+
+Steps for the day of the event
+
+- Make login info public so people can copy & paste
+- Delete all VMs that were assigned already. They will be replaced with clean ones
+- Start all VMs
+
 
 ### VM sizing
 
@@ -43,6 +56,14 @@ OsFreeVirtualMemory                                     : 7548404
 
 Building a sample mvc app with Docker took 4 mins, 9 seconds
 
+Creating them takes some time, but you can set lab size and they'll be done in the background.
+
+Starting a VM seems to take about 2 minutes before you can connect.
+
 #### Large
 
 Standard_D8s_v3 based on metadata query
+
+Seems to start in about same time - 10 VMs started in about 2-3 minutes total
+
+The same mvc app build with Docker took 1 min, 51 seconds. IO queue depth seemed much shorter.

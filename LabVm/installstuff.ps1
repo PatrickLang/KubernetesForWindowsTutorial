@@ -36,6 +36,11 @@ curl.exe -o modified-taskbar.xml -L https://raw.githubusercontent.com/PatrickLan
 Import-StartLayout -LayoutPath .\modified-taskbar.xml -MountPath c:\
 get-process explorer | stop-process ; explorer.exe
 
+
+# Now that installs are done, disable Windows Update. If you're presenting on patch Tuesday,this is a really good idea
+Remove-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name AUOptions
+Set-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -Value 1
+
 # TODO: fix path so git works
 
 mkdir c:\repos
