@@ -30,9 +30,9 @@ mkdir c:\repos
 #git checkout windowsserver2019
 #docker build -t mssql-server-windows-express .
 
-# TODO: handle reboot, then schedule image pull
+# TODO: This is still not working. The post-reboot script needs to run as the user to finish setting up WSL
 curl.exe -L https://raw.githubusercontent.com/PatrickLang/KubernetesForWindowsTutorial/master/LabVm/postreboot.ps1 -o c:\postreboot.ps1
-$action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument '-command C:\postreboot.ps1'
-$trigger = New-ScheduledTaskTrigger -AtStartup
-Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "\PowerShell\Finish Installing Stuff (run once)" -Description "Finish pulling images and other things that need to be done once after installing features"
+#$action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument '-command C:\postreboot.ps1'
+#$trigger = New-ScheduledTaskTrigger -AtStartup
+#Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "\PowerShell\Finish Installing Stuff (run once)" -Description "Finish pulling images and other things that need to be done once after installing features"
 schtasks /create /TN RebootToContinue /RU SYSTEM /TR "shutdown.exe /r /t 0 /d 2:17" /SC ONCE /ST $(([System.DateTime]::Now + [timespan]::FromMinutes(1)).ToString("HH:mm")) /V1 /Z
