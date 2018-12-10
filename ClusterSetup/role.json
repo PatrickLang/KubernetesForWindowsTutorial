@@ -10,7 +10,8 @@
       "apiGroups": [
         "",
         "extensions",
-        "apps"
+        "apps",
+        "horizontalpodautoscalers"
       ],
       "resources": [
         "*"

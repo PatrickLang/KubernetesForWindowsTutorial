@@ -13,7 +13,7 @@ function createNamespaceAndUser {
       jq ".roleRef.name = \"$ns-user-full-access\"" | kubectl create -f -
   userSecret=$(kubectl get sa $ns-user -n $ns -o json | jq .secrets[0].name | sed s/\"//g )
   userToken=$(kubectl get secret $userSecret -n $ns -o "jsonpath={.data.token}" | base64 -d)
-  caCert=$(kubectl get secret $userSecret -n $ns -o "jsonpath={.data['ca\.crt']}" | base64 -d)
+  caCert=$(kubectl get secret $userSecret -n $ns -o "jsonpath={.data['ca\.crt']}" )
   currentServer=$(cat $KUBECONFIG | jq .clusters[0].cluster.server | sed s/\"//g)
   currentCluster=$(cat $KUBECONFIG | jq .clusters[0].name | sed s/\"//g)
   cat kubeconfigTemplate.yaml | \
