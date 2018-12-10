@@ -18,12 +18,10 @@ for (i=0;i<100;i++) {
 
 Need to add this, fix namespaces
 ```
+# docker login already done, and credential cached in ~/.docker/config.json
 draft config set registry kkna2018reg.azurecr.io
-helm init --tiller-namespace h --node-selectors "beta.kubernetes.io/os=linux"
-```
+helm init --tiller-namespace h --node-selectors "beta.kubernetes.io/os=linux" --service-account h-user
 
-```
-helm list --tiller-namespace h
-Error: configmaps is forbidden: User "system:serviceaccount:h:default" cannot list resource "configmaps" in API group "" in the namespace "h"
+# draft up --tiller-namespace h
 ```
 
