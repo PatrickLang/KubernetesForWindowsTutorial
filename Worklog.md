@@ -9,8 +9,8 @@ https://docs.microsoft.com/en-us/azure/lab-services/classroom-labs/classroom-lab
 
 Open questions
 
-- [ ] limit to number of VMs?
-- [ ] is VM startup fast enough?
+- [ ] is there a limit to number of VMs a lab can have?
+- [x] is VM startup fast enough?
 - [ ] any way to automate setup instead of using a login / save template workflow
 
 
@@ -28,11 +28,11 @@ Manual steps before day of event
 Steps for the day of the event
 
 - Keep registration restricted
-- Make login info public so people can copy & paste
 - Delete all VMs that were assigned already. They will be replaced with clean ones
 - Start all VMs
-- In session, set registration to unrestricted
-
+- In session
+  - Set registration to unrestricted
+  - Make login info public so people can copy & paste
 
 ### VM sizing
 
@@ -70,6 +70,6 @@ Starting a VM seems to take about 2 minutes before you can connect.
 
 Standard_D8s_v3 based on metadata query
 
-Seems to start in about same time - 10 VMs started in about 2-3 minutes total
+Seems to start in about same time - 10 VMs started in about 2-3 minutes total. Starting them parallel in batches of 10-20 seemed to be just as fast
 
 The same mvc app build with Docker took 1 min, 51 seconds. IO queue depth seemed much shorter.
