@@ -1,0 +1,35 @@
+{
+  "kind": "Role",
+  "apiVersion": "rbac.authorization.k8s.io/v1beta1",
+  "metadata": {
+    "name": "mynamespace-user-full-access",
+    "namespace": "mynamespace"
+  },
+  "rules": [
+    {
+      "apiGroups": [
+        "",
+        "extensions",
+        "apps"
+      ],
+      "resources": [
+        "*"
+      ],
+      "verbs": [
+        "*"
+      ]
+    },
+    {
+      "apiGroups": [
+        "batch"
+      ],
+      "resources": [
+        "jobs",
+        "cronjobs"
+      ],
+      "verbs": [
+        "*"
+      ]
+    }
+  ]
+}
