@@ -14,7 +14,9 @@ dotnet new mvc
 draft create -p CSharpWindowsNetCore
 ```
 
-Now, modify `draft.toml`
+Open the folder with Visual Studio code with `code .` (or another editor)
+
+Find and modify `draft.toml`
 
 1. Set the `namespace` to match the namespace you have access to
 2. Add a line to set the ingress `set = ["ingress.enabled=true", "basedomain=test.ogfg.link"]`
