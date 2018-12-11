@@ -36,12 +36,10 @@ helm install --name nginx-ingress \
 ## Configuration users need to do inside VMs
 
 ```
-# get kubeconfig, set KUBECONFIG variable
+# get kubeconfig, write it to ~/.kube/config
 # $ENV:TILLER_NAMESPACE="h"
 # docker login already done, and credential cached in ~/.docker/config.json
 draft config set registry kkna2018reg.azurecr.io
 helm init --tiller-namespace h --node-selectors "beta.kubernetes.io/os=linux" --service-account h-user
-
-# draft up --tiller-namespace h
 ```
 
