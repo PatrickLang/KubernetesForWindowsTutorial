@@ -7,6 +7,8 @@ This repo has step by step walkthroughs for two different use cases of Windows c
 
 If you're reading this from Kubecon North America 2018, [click here](https://github.com/PatrickLang/kkna2018lab) for instructions on how to connect to your lab VM.
 
+> After connecting, there are some important steps to get your KUBECONFIG. Keep reading on that repo to make sure you don't miss anything.
+
 If you missed the session at Kubecon but want to build a similar lab for your team, check out the [LabVM](https://github.com/PatrickLang/KubernetesForWindowsTutorial/tree/master/LabVm) folder here for info on how they were set up.
 
 
