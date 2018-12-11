@@ -118,3 +118,5 @@ kubectl get ingress
 NAME                       HOSTS                     ADDRESS   PORTS   AGE
 fabrikamfiberweb-ingress   rascally.test.ogfg.link             80      24m
 ```
+
+![Screenshot of the site](SiteLoaded.png)
