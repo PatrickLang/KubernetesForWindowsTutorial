@@ -1,5 +1,14 @@
 ## Create a sample web app
 
+First, make a new directory for the project. Name it something tasty :)
+
+```powershell
+mkdir jaffacake
+cd jaffacake
+```
+
+Next, use `dotnet new` to create a new template project, then `draft create -p CSharpWindowsNetCore` to scaffold it.
+
 ```powershell
 dotnet new mvc
 draft create -p CSharpWindowsNetCore
