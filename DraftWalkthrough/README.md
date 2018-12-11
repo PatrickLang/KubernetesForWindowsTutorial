@@ -55,44 +55,45 @@ Run `draft up`
 It will build and push the Docker image to the private registry, then release it with Helm. The first build will probably take a few minutes as the Docker images are pulled, and the .Net Core packages are cached into a container layer.
 
 ```none
-Draft Up Started: 'webbcd': 01CYD9T0XG5C0XBJQTJP9CEEPK
-webbcd: Building Docker Image: SUCCESS ⚓  (1.0002s)
-webbcd: Pushing Docker Image: SUCCESS ⚓  (3.3824s)
-webbcd: Releasing Application: SUCCESS ⚓  (20.8183s)
-Inspect the logs with `draft logs 01CYD9T0XG5C0XBJQTJP9CEEPK`
+PS C:\Users\kkna2018\jaffacake> draft up
+Draft Up Started: 'jaffacake': 01CYFB2WD0CNMPZV0EW6DSF2JF
+jaffacake: Building Docker Image: SUCCESS ⚓  (105.0876s)
+jaffacake: Pushing Docker Image: SUCCESS ⚓  (8.2328s)
+jaffacake: Releasing Application: SUCCESS ⚓  (35.8252s)
+Inspect the logs with `draft logs 01CYFB2WD0CNMPZV0EW6DSF2JF`
 ```
 
 Now, the deployment will be listed with `helm list`, and you can get more details with `helm status`
 
 ```none
-PS C:\repos\webbcd> helm list
-NAME    REVISION        UPDATED                         STATUS          CHART           APP VERSION     NAMESPACE
-webbcd  1               Tue Dec 11 00:14:06 2018        DEPLOYED        webbcd-v0.0.1                   h
-
-PS C:\repos\webbcd> helm status webbcd
-LAST DEPLOYED: Tue Dec 11 00:14:06 2018
-NAMESPACE: h
+helm list
+NAME            REVISION        UPDATED                         STATUS          CHART                   APP VERSION     NAMESPACE
+jaffacake       1               Tue Dec 11 19:16:43 2018        DEPLOYED        jaffacake-v0.0.1                        rascally
+PS C:\Users\kkna2018\jaffacake> helm status jaffacake
+LAST DEPLOYED: Tue Dec 11 19:16:43 2018
+NAMESPACE: rascally
 STATUS: DEPLOYED
 
 RESOURCES:
+==> v1/Service
+NAME                 AGE
+jaffacake-jaffacake  1m
+
 ==> v1/Deployment
-NAME           AGE
-webbcd-webbcd  31s
+jaffacake-jaffacake  1m
 
 ==> v1beta1/Ingress
-webbcd-webbcd  31s
+jaffacake-jaffacake  1m
 
 ==> v1/Pod(related)
 
-NAME                            READY  STATUS   RESTARTS  AGE
-webbcd-webbcd-5b77664959-zkbg2  1/1    Running  0         31s
-
-==> v1/Service
-
-NAME           AGE
-webbcd-webbcd  31s
+NAME                                 READY  STATUS   RESTARTS  AGE
+jaffacake-jaffacake-585fd7db4-crqwr  1/1    Running  0         1m
 
 
 NOTES:
 
-  http://webbcd.test.ogfg.link to access your application
+  http://jaffacake.test.ogfg.link to access your application
+```
+
+Open up your browser, and try it out!
