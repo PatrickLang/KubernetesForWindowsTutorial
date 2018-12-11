@@ -52,6 +52,8 @@ helm init --node-selectors "beta.kubernetes.io/os=linux" --tiller-namespace rasc
 
 Run `draft up`
 
+It will build and push the Docker image to the private registry, then release it with Helm.
+
 ```none
 Draft Up Started: 'webbcd': 01CYD9T0XG5C0XBJQTJP9CEEPK
 webbcd: Building Docker Image: SUCCESS ⚓  (1.0002s)
