@@ -26,36 +26,49 @@ Here's a full example:
     set = ["ingress.enabled=true", "basedomain=test.ogfg.link"]
 ```
 
-Modify the last few lines to enable ingress.
+## Deploy it
 
-```yaml
-...
-ingress:
-  enabled: true
-basedomain: "test.ogfg.link"
+Run `draft up`
+
+```none
+Draft Up Started: 'webbcd': 01CYD9T0XG5C0XBJQTJP9CEEPK
+webbcd: Building Docker Image: SUCCESS ⚓  (1.0002s)
+webbcd: Pushing Docker Image: SUCCESS ⚓  (3.3824s)
+webbcd: Releasing Application: SUCCESS ⚓  (20.8183s)
+Inspect the logs with `draft logs 01CYD9T0XG5C0XBJQTJP9CEEPK`
 ```
 
-Full example:
-```yaml
-# Default values for c#.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-replicaCount: 1
-image:
-  pullPolicy: IfNotPresent
-service:
-  name: dotnetcore
-  type: ClusterIP
-  externalPort: 8080
-  internalPort: 80
-resources:
-  limits:
-    cpu: 1
-    memory: 512Mi
-  requests:
-    cpu: 250m
-    memory: 256Mi
-ingress:
-  enabled: true
-basedomain: "test.ogfg.link"
-```
+Now, the deployment will be listed with `helm list`, and you can get more details with `helm status`
+
+```none
+PS C:\repos\webbcd> helm list
+NAME    REVISION        UPDATED                         STATUS          CHART           APP VERSION     NAMESPACE
+webbcd  1               Tue Dec 11 00:14:06 2018        DEPLOYED        webbcd-v0.0.1                   h
+
+PS C:\repos\webbcd> helm status webbcd
+LAST DEPLOYED: Tue Dec 11 00:14:06 2018
+NAMESPACE: h
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Deployment
+NAME           AGE
+webbcd-webbcd  31s
+
+==> v1beta1/Ingress
+webbcd-webbcd  31s
+
+==> v1/Pod(related)
+
+NAME                            READY  STATUS   RESTARTS  AGE
+webbcd-webbcd-5b77664959-zkbg2  1/1    Running  0         31s
+
+==> v1/Service
+
+NAME           AGE
+webbcd-webbcd  31s
+
+
+NOTES:
+
+  http://webbcd.test.ogfg.link to access your application
