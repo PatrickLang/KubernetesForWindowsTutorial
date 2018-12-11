@@ -22,7 +22,7 @@ This works well as a cross-platform demo since premade containers are on Docker 
 
 This was deployed once by hand using the YAML files in k8s/*
 
-It was also used as part of a build & release pipeline using the Helm chart in charts/fabrikamfiber _link to Jessica's blog with pipeline needed_
+It was also used as part of a build & release pipeline using the Helm chart in charts/fabrikamfiber. There are more details linked from https://aka.ms/winkubecon
 
 ## Tutorial 2 - Creating a new app and deploying with Draft and Helm
 
@@ -41,19 +41,24 @@ Source: [eShopOnWeb](https://github.com/PatrickLang/eShopOnWeb/tree/patricklang/
 
 ## References
 
-### Tools Used
+Here's all the tools I used to put the labs together. Hopefully I can turn this into a blog later on how to build your own. I'm going to call it "Shadow LabOps" - you heard it here first.
 
-ACS-Engine - [Getting started guide for Windows clusters](http://aka.ms/windowscontainers/kubernetes) is usually the right place to start. I did a lot of last minute work to move this forward to Windows Server 2019. Right now there isn't a known-good release that's been fully tested with Windows Server 2019, so I'll share the one I used
+### Kubernetes deployments
 
-Helm - no changes
+ACS-Engine - [Getting started guide for Windows clusters](http://aka.ms/windowscontainers/kubernetes) is usually the right place to start. I did a lot of last minute work to move this forward to Windows Server 2019, but as of 12/11/2018 it's still deploying a Kubernetes v1.13-alpha release. Watch for a new release soon that supports Windows Server 2019 with Kubernetes v1.13.1.
 
-Draft - no changes
+Helm - no changes, just used the latest release
+
+Draft - no changes, just used the latest release
 
 New draft packs were put together and are at https://github.com/patricklang/WindowsDraftPacks
 
 ### Azure DevTest Labs
 
-This was used to automate rolling out the VMs. It makes it easy to deploy an existing VM, and add extra artifacts to it. It can also handle checkout/check-in of shared VMs but I didn't use that. I used the "Run PowerShell script" artifact to run the script in the gist above. Running unsigned code from GitHub is a bad idea, so you should copy the scripts and use a secured storage account instead. 
+https://docs.microsoft.com/en-us/azure/lab-services/classroom-labs/classroom-labs-overview 
+
+
+This was used to automate rolling out the VMs. It makes it easy to deploy an existing VM, and add log in and set up apps, then publish it. Students can check a VM out and use it without needing a paid Azure subscription. The scripts I used to install everything inside the VM are in [labvm/](https://github.com/PatrickLang/KubernetesForWindowsTutorial/tree/master/LabVm)
 
 
 ### Lab VM Setup
