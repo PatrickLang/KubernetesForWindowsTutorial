@@ -12,8 +12,6 @@ If you missed the session at Kubecon but want to build a similar lab for your te
 
 ## Tutorial 1 - Lift & Shift
 
-
-
 This is an example "lift & shift" deployment that's been moved into a modern deployment workflow with no substantial changes to the app. It builds from a traditional build server with the Visual Studio 2017 command line tools, and is packaged up with Docker.
 
 This works well as a cross-platform demo since premade containers are available for Microsoft SQL Server on Linux, and the web app remains on Windows.
@@ -26,7 +24,9 @@ Source: [FabrikamFiber](https://github.com/PatrickLang/fabrikamfiber/tree/helm-2
 
 ## Tutorial 2 - Creating a new app and deploying with Draft and Helm
 
-> TODO
+This is a step by step guide to creating a new .Net Core app using a built-in template, along with Draft to scaffold it to Kubernetes.
+
+Once you're logged into the Lab VM, visit [DraftWalkthrough](./DraftWalkthrough/README.md) for the step-by-step guide.
 
 
 ## Tutorial 3 - DevOps workflow with Draft and .Net Core
