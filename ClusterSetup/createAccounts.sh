@@ -1,6 +1,8 @@
+#!/bin/bash
+
+desiredAccounts=$1
 
 function createNamespaceAndUser {
-  set -x
   ns=$1
   echo Creating new namespace $ns
   kubectl create ns $ns
@@ -30,3 +32,7 @@ function createNamespaceAndUser {
     jq ".\"current-context\" = \"$ns\"" > $ns-user.json
 }
 
+for account in $(cat /usr/share/dict/words | grep -v "'" | sort -R | head -n $desiredAccounts )
+do
+  createNamespaceAndUser $account
+done
