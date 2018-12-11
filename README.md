@@ -16,13 +16,13 @@ If you missed the session at Kubecon but want to build a similar lab for your te
 
 This is an example "lift & shift" deployment that's been moved into a modern deployment workflow with no substantial changes to the app. It builds from a traditional build server with the Visual Studio 2017 command line tools, and is packaged up with Docker.
 
-This works well as a cross-platform demo since premade containers are available for Microsoft SQL Server on Linux, and the web app remains on Windows.
+Once you're logged into the Lab VM, visit [LiftAndShiftWalkthrough](./LiftAndShiftWalkthrough/README.md) for the step-by-step guide.
+
+This works well as a cross-platform demo since premade containers are on Docker Hub for Microsoft SQL Server on Linux, and the web app remains on Windows.
 
 This was deployed once by hand using the YAML files in k8s/*
 
-It was also used as part of a build & release pipeline using the Helm chart in charts/fabrikamfiber
-
-Source: [FabrikamFiber](https://github.com/PatrickLang/fabrikamfiber/tree/helm-2019-mssql-linux)
+It was also used as part of a build & release pipeline using the Helm chart in charts/fabrikamfiber _link to Jessica's blog with pipeline needed_
 
 ## Tutorial 2 - Creating a new app and deploying with Draft and Helm
 
