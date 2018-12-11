@@ -14,6 +14,8 @@ dotnet new mvc
 draft create -p CSharpWindowsNetCore
 ```
 
+## Update a few deployment parameters
+
 Open the folder with Visual Studio code with `code .` (or another editor)
 
 Find and modify `draft.toml`
