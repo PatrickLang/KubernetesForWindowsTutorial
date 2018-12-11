@@ -39,6 +39,15 @@ Here's a full example:
     set = ["ingress.enabled=true", "basedomain=test.ogfg.link"]
 ```
 
+## Make sure Helm is ready
+
+Run `helm init` to install Tiller in your namespace. Tiller handles deployment steps for Helm charts. Be sure to set the namespace and service account to match the user shown in `kubectl config get-contexts`
+
+```powershell
+helm init --node-selectors "beta.kubernetes.io/os=linux" --tiller-namespace rascally --service-account rascally-user
+```
+
+
 ## Deploy it
 
 Run `draft up`
