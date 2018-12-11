@@ -36,7 +36,7 @@ Once you're logged into the Lab VM, visit [DraftWalkthrough](./DraftWalkthrough/
 
 This is currently set up with Draft to build and run entirely in Windows containers.
 
-Source: [eShopOnWeb](https://github.com/PatrickLang/eShopOnWeb/tree/patricklang/k8s-win)
+Source: [eShopOnWeb](https://github.com/PatrickLang/eShopOnWeb/tree/patricklang/k8s-win#running-the-sample-on-kubernetes-using-draft)
 
 
 ## References
