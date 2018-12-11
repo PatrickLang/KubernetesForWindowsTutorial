@@ -26,8 +26,8 @@ Here's a full example:
 ```toml
 [environments]
   [environments.development]
-    name = "webbcd"
-    namespace = "h"
+    name = "jaffacake"
+    namespace = "rascally"
     wait = true
     watch = false
     watch-delay = 2
