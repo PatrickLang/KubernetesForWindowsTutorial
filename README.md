@@ -45,7 +45,7 @@ Here's all the tools I used to put the labs together. Hopefully I can turn this 
 
 ### Kubernetes deployments
 
-AKS-Engine - [Getting started guide for Windows clusters](http://aka.ms/windowscontainers/kubernetes) is usually the right place to start. I did a lot of last minute work to move this forward to Windows Server 2019, but as of 12/11/2018 it's still deploying a Kubernetes v1.13-alpha release. Watch for a new release soon that supports Windows Server 2019 with Kubernetes v1.13.1.
+AKS-Engine - Check out the [Getting started guide for Windows clusters](http://aka.ms/windowscontainers/kubernetes) to deploy Windows Server 2019 with Kubernetes v1.13.1 on Azure.
 
 Helm - no changes, just used the latest release
 
