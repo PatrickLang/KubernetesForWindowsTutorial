@@ -9,7 +9,9 @@ If you're reading this from Kubecon North America 2018, [click here](https://git
 
 > After connecting, there are some important steps to get your KUBECONFIG. Keep reading on that repo to make sure you don't miss anything.
 
-If you missed the session at Kubecon but want to build a similar lab for your team, check out the [LabVM](https://github.com/PatrickLang/KubernetesForWindowsTutorial/tree/master/LabVm) folder here for info on how they were set up.
+If you missed the session at Kubecon but want to build a similar lab for your team, check out these folders:
+- [ClusterSetup](./ClusterSetup/Worklog.md) - how I set up my Kubernetes v1.13 cluster
+- [LabVm](./LabVm/Worklog.md) - how I set up the Lab VMs using Azure Labs
 
 
 ## Tutorial 1 - Lift & Shift
