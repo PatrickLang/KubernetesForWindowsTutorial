@@ -1,3 +1,15 @@
+
+## Prerequisites
+
+- Kubernetes cluster with Windows nodes
+- A working container registry
+  - If you're using Azure
+    - [Set up ACR](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli)
+    - [Authenticate it to ACR](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-auth-aks)
+    - [Log in to ACR](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli#log-in-to-registry) on your Windows machine
+  - Otherwise, use `docker login` on your Windows machine, and be sure to set up a Kubernetes [image pull secret](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
+- [Windows Draft Pack](https://github.com/PatrickLang/WindowsDraftPacks)
+
 ## Create a sample web app
 
 First, make a new directory for the project. Name it something tasty :)
@@ -12,6 +24,13 @@ Next, use `dotnet new` to create a new template project, then `draft create -p C
 ```powershell
 dotnet new mvc
 draft create -p CSharpWindowsNetCore
+```
+
+## Install .Net Core draft pack
+
+```
+draft init
+draft pack-repo add https://github.com/PatrickLang/WindowsDraftPacks
 ```
 
 ## Update a few deployment parameters
