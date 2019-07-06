@@ -1,6 +1,7 @@
 
 ## Prerequisites
 
+- [.Net Core 2.2 SDK](https://dotnet.microsoft.com/download)
 - Kubernetes cluster with Windows nodes
 - A working container registry
   - If you're using Azure
@@ -9,6 +10,14 @@
     - [Log in to ACR](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli#log-in-to-registry) on your Windows machine
   - Otherwise, use `docker login` on your Windows machine, and be sure to set up a Kubernetes [image pull secret](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
 - [Windows Draft Pack](https://github.com/PatrickLang/WindowsDraftPacks)
+
+### Installing the sample Windows & .Net Core draft pack
+
+```
+draft init
+draft pack-repo add https://github.com/PatrickLang/WindowsDraftPacks
+```
+
 
 ## Create a sample web app
 
@@ -26,12 +35,6 @@ dotnet new mvc
 draft create -p CSharpWindowsNetCore
 ```
 
-## Install .Net Core draft pack
-
-```
-draft init
-draft pack-repo add https://github.com/PatrickLang/WindowsDraftPacks
-```
 
 ## Update a few deployment parameters
 
@@ -66,6 +69,11 @@ Run `helm init` to install Tiller in your namespace. Tiller handles deployment s
 helm init --node-selectors "beta.kubernetes.io/os=linux" --tiller-namespace rascally --service-account rascally-user
 ```
 
+## Configure draft to use the container registry
+
+Set your draft config to use the same registry that you configured on your Kubernetes cluster.
+
+`draft config set registry <registryFqdn>`
 
 ## Deploy it
 
