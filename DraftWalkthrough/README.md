@@ -23,6 +23,8 @@ draft pack-repo add https://github.com/PatrickLang/WindowsDraftPacks
 
 First, make a new directory for the project. Name it something tasty :)
 
+> Tip: Draft will use this directory name, including the case. Some Kubernetes objects are restricted to lowercase-only names. Using all lowercase here will help keep things from breaking later.
+
 ```powershell
 mkdir jaffacake
 cd jaffacake
